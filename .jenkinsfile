@@ -9,13 +9,13 @@ pipeline
       {
       steps
       {
-        bat 'mvn clean'
+        checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/amitanurag91/DockerSeleniumRepo.git']])
       }
       }
       stage('Deploy')
       {
       steps{
-        bat "mvn install"
+        bat "mvn clean install"
       }
       }
 
