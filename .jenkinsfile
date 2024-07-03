@@ -6,9 +6,34 @@ pipeline
 	{
       stage('Build')
       {
-        bat "mvn compile"
-
+      steps
+      {
+        bat "mvn clean"
       }
+      }
+      stage('Deploy')
+      {
+      steps{
+        bat "mvn install"
+      }
+      }
+
+       stage('Test')
+      {
+      steps
+      {
+        bat "mvn test"
+      }
+      }
+
+       stage('Release')
+      {
+      steps
+      {
+        echo 'releasing the project'
+      }
+      }
+
 
 	}
 }
