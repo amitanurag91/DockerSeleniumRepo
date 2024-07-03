@@ -4,6 +4,8 @@ pipeline
 
 	stages
 	{
+withMaven(globalMavenSettingsConfig: '', jdk: 'JavaJDK', maven: 'maven', mavenSettingsConfig: '', traceability: true) {
+   
       stage('Build')
       {
       steps
@@ -36,4 +38,5 @@ pipeline
 
 
 	}
+}
 }
